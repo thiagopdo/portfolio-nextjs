@@ -3,15 +3,20 @@ import { Bricolage_Grotesque, Oswald } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import GrainEffect from "@/components/visualEffects/grain-effect";
+import { Cursor } from "@/components/cursor/cursor";
 
 //Fonts
 const MainFont = Bricolage_Grotesque({ subsets: ["latin"] });
 const OswaldFont = Oswald({ subsets: ["latin"], variable: "--font-oswald" });
 const PixelFont = localFont({
-  src: "../public/assests/fonts/pixelfont.ttf",
+  src: "../public/assets/fonts/pixelfont.ttf",
   variable: "--font-pixel",
 });
 
+
+
+//Metadata
 export const metadata: Metadata = {
   title: "THIAGO OLIVEIRA",
   description: "Thiago official portfolio",
@@ -32,6 +37,8 @@ export default function RootLayout({
           PixelFont.variable
         )}
       >
+        <GrainEffect />
+        <Cursor color="#fff" />
         {children}
       </body>
     </html>
